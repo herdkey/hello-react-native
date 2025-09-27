@@ -1,3 +1,5 @@
+import { device, expect, element, by } from 'detox';
+
 describe('Example', () => {
   beforeAll(async () => {
     await device.launchApp();

@@ -1,4 +1,5 @@
-# Hello Mobile Development Commands
+import '.justfiles/base.just'
+
 
 # Install dependencies
 install:
@@ -6,23 +7,24 @@ install:
 
 # Install iOS dependencies (CocoaPods)
 pods:
-    cd ios && bundle install && bundle exec pod install
+    cd ios \
+    && pnpm bundle install \
+    && pnpm bundle exec pod install
 
 # Run linter
-lint:
-    pnpm run lint
+lint: (_lint "--fix")
 
 # Fix linting issues
-lint-fix:
-    pnpm run lint --fix
+_lint args="":
+    pnpm eslint "{{ justfile_dir() }}" {{ args }}
 
 # Run type check
 typecheck:
-    pnpx tsc --noEmit
+    pnpm exec tsc --noEmit
 
 # Run unit tests
 test:
-    pnpm run test
+    pnpm jest
 
 # Run unit tests in watch mode
 test-watch:
@@ -30,33 +32,32 @@ test-watch:
 
 # Run E2E tests
 e2e:
-    pnpm run e2e
+    pnpm detox test -c ios.sim.debug
 
 # Build app for E2E testing
 e2e-build:
-    pnpm run e2e:build
+    pnpm detox build -c ios.sim.debug
 
 # Start Metro bundler
 start:
-    pnpm run start
+    pnpm react-native start
 
 # Run on iOS simulator
 ios:
-    pnpm run ios
+    pnpm react-native run-ios
 
 # Run on Android emulator
 android:
-    pnpm run android
+    pnpm react-native run-android
 
 # Clean and reinstall everything
-clean-install:
+clean-install: && pods
     rm -rf node_modules
     rm -rf ios/Pods
     rm -rf ios/build
     rm -rf android/build
     rm -rf android/app/build
     pnpm install
-    just pods
 
 # Run all quality checks
 check: lint typecheck test

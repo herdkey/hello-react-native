@@ -19,7 +19,7 @@ const App: React.FC = (): React.ReactElement => {
       // For example, loading fonts, checking authentication, etc.
 
       // Simulate some loading time
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(() => resolve(undefined), 1000));
 
       // Hide the splash screen
       await BootSplash.hide({ fade: true });

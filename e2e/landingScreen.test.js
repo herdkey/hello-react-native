@@ -1,4 +1,4 @@
-const { device, expect, element, by } = require('detox');
+import { device, expect, element, by } from 'detox';
 
 describe('Landing Screen', () => {
   beforeAll(async () => {
