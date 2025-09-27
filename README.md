@@ -4,15 +4,24 @@ A React Native CLI project with TypeScript, comprehensive testing setup, and mod
 
 ## Prerequisites
 
-- Node.js 22.20.0 (managed via volta)
-- pnpm package manager
-- Ruby 3.3.6 (for CocoaPods)
+- Node.js and pnpm - managed via `volta`
+- Ruby (for CocoaPods) - managed via `rbenv`
 - iOS development: Xcode and iOS Simulator
 - Android development: Android Studio and Android Emulator
 
 ## Setup Instructions
 
 ### 1. Install Dependencies
+
+#### xcode
+Make sure `xcode` is installed. You can do this through the Mac App Store.
+
+#### applesimutils
+
+```shell
+brew tap wix/brew
+brew install applesimutils
+```
 
 ```bash
 # Install Node.js packages
@@ -40,49 +49,15 @@ just ios
 just android
 ```
 
-## Development Scripts
-
-This project uses [just](https://github.com/casey/just) as a task runner. Available commands:
-
-```bash
-# Package management
-just install          # Install dependencies
-just pods             # Install iOS dependencies (CocoaPods)
-
-# Development
-just start            # Start Metro bundler
-just ios              # Run on iOS simulator
-just android          # Run on Android emulator
-
-# Code quality
-just lint             # Run linter
-just lint-fix         # Fix linting issues
-just typecheck        # Run TypeScript type checking
-just format           # Format code with Prettier
-just format-check     # Check code formatting
-
-# Testing
-just test             # Run unit tests
-just test-watch       # Run unit tests in watch mode
-just e2e              # Run E2E tests
-just e2e-build        # Build app for E2E testing
-
-# Quality checks
-just check            # Run lint, typecheck, and test
-
-# Maintenance
-just clean-install    # Clean and reinstall everything
-```
-
 ## Project Structure
 
 ```
 hello-mobile/
 ├── src/
-│   ├── components/    # Reusable UI components
-│   └── screens/      # Screen components
+│   ├── components/  # Reusable UI components
+│   └── screens/     # Screen components
 │       └── LandingScreen.tsx
-├── __tests__/        # Unit and integration tests
+├── __tests__/       # Unit and integration tests
 ├── e2e/             # Detox E2E tests
 ├── ios/             # iOS native code
 ├── android/         # Android native code

@@ -51,13 +51,12 @@ android:
     pnpm react-native run-android
 
 # Clean and reinstall everything
-clean-install: && pods
+clean-install: && install pods
     rm -rf node_modules
     rm -rf ios/Pods
     rm -rf ios/build
     rm -rf android/build
     rm -rf android/app/build
-    pnpm install
 
 # Run all quality checks
 check: lint typecheck test
