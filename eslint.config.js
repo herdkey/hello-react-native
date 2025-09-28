@@ -37,7 +37,7 @@ export default [
         ecmaFeatures: {
           jsx: true,
         },
-        project: './tsconfig.json',
+        projectService: true,
       },
       globals: {
         __DEV__: 'readonly',
