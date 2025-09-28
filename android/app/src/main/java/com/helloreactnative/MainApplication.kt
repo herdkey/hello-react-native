@@ -1,4 +1,4 @@
-package com.hellomobile
+package com.helloreactnative
 
 import android.app.Application
 import com.facebook.react.PackageList

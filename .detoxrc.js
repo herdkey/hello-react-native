@@ -13,16 +13,16 @@ module.exports = {
     'ios.debug': {
       type: 'ios.app',
       binaryPath:
-        'ios/build/Build/Products/Debug-iphonesimulator/hellomobile.app',
+        'ios/build/Build/Products/Debug-iphonesimulator/helloreactnative.app',
       build:
-        'xcodebuild -workspace ios/hellomobile.xcworkspace -scheme hellomobile -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build',
+        'xcodebuild -workspace ios/helloreactnative.xcworkspace -scheme helloreactnative -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build',
     },
     'ios.release': {
       type: 'ios.app',
       binaryPath:
-        'ios/build/Build/Products/Release-iphonesimulator/hellomobile.app',
+        'ios/build/Build/Products/Release-iphonesimulator/helloreactnative.app',
       build:
-        'xcodebuild -workspace ios/hellomobile.xcworkspace -scheme hellomobile -configuration Release -sdk iphonesimulator -derivedDataPath ios/build',
+        'xcodebuild -workspace ios/helloreactnative.xcworkspace -scheme helloreactnative -configuration Release -sdk iphonesimulator -derivedDataPath ios/build',
     },
     'android.debug': {
       type: 'android.apk',

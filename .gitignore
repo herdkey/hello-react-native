@@ -1,6 +1,9 @@
 # OSX
 .DS_Store
 
+# Claude
+/.claude/settings.local.json
+
 # Xcode
 *.pbxuser
 !default.pbxuser
