@@ -13,14 +13,29 @@ pods:
     && pnpm bundle install \
     && pnpm bundle exec pod install
 
-# Run linter
+# Run eslint and fix issues
 [group('check')]
 lint: (_lint "--fix")
 
-# Fix linting issues
+# Run eslint and fail on issues
+lint-check: _lint
+
+# Run eslint
 [group('check')]
 _lint args="":
     pnpm eslint "{{ justfile_dir() }}" {{ args }}
+
+# Format code with prettier
+[group('check')]
+fmt: (_fmt "--write --log-level warn")
+
+# Check code formatting with prettier
+[group('check')]
+fmt-check: (_fmt "--check")
+
+# Run prettier
+_fmt args="":
+    pnpx prettier {{args}} "**/*.{ts,tsx,js,jsx,json,md}"
 
 # Run type check
 [group('check')]
@@ -30,18 +45,6 @@ typecheck:
 # Run all quality checks
 [group('check')]
 check: lint fmt typecheck
-
-# Format code with Prettier
-[group('check')]
-fmt: (_fmt "--write")
-
-# Check code formatting
-[group('check')]
-fmt-check: (_fmt "--check")
-
-# Run prettier
-_fmt args="":
-    pnpx prettier {{args}} "**/*.{ts,tsx,js,jsx,json,md}"
 
 # Run unit tests
 [group('test')]

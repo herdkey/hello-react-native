@@ -14,6 +14,7 @@ A React Native CLI project with TypeScript, comprehensive testing setup, and mod
 ### 1. Install Dependencies
 
 #### xcode
+
 Make sure `xcode` is installed. You can do this through the Mac App Store.
 
 #### applesimutils
@@ -85,12 +86,14 @@ hello-mobile/
 ## Testing
 
 ### Unit Tests
+
 ```bash
 just test           # Run all unit tests
 just test-watch     # Run tests in watch mode
 ```
 
 ### E2E Tests
+
 ```bash
 just e2e-build      # Build app for testing
 just e2e            # Run E2E tests
@@ -99,14 +102,17 @@ just e2e            # Run E2E tests
 ## Troubleshooting
 
 ### iOS Build Issues
+
 - Make sure CocoaPods are installed: `just pods`
 - Clean and reinstall if needed: `just clean-install`
 
 ### Metro/JavaScript Issues
+
 - Clear Metro cache: `pnpx react-native start --reset-cache`
 - Clean and reinstall: `just clean-install`
 
 ### Version Management
+
 - Ensure Node.js 22.20.0 is active: `node --version`
 - Ensure correct pnpm version: `pnpm --version`
 
