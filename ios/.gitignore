@@ -1,0 +1,18 @@
+# CocoaPods
+Pods/
+*.xcworkspace
+
+# Xcode build artifacts
+build/
+DerivedData/
+
+# User-specific Xcode settings
+**/xcuserdata/
+
+# Build artifacts
+*.ipa
+*.dSYM
+*.hmap
+
+# Environment files (keep .xcode.env, ignore local overrides)
+.xcode.env.local

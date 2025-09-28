@@ -1,0 +1,27 @@
+# Gradle
+build/
+.gradle/
+gradle-app.setting
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Local configuration
+local.properties
+
+# NDK
+.cxx/
+.externalNativeBuild/
+
+# Kotlin
+.kotlin/
+
+# Build artifacts
+*.hprof
+*.apk
+*.aab
+
+# Keystores (keep debug.keystore, ignore others)
+*.keystore
+!debug.keystore
