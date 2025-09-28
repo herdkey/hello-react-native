@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { colors } from '@src/theme';
 
 const LandingScreen: React.FC = (): React.ReactElement => {
   return (
@@ -14,12 +15,12 @@ const LandingScreen: React.FC = (): React.ReactElement => {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: colors.background,
     flex: 1,
     justifyContent: 'center',
   },
   text: {
-    color: '#333333',
+    color: colors.text,
     fontSize: 24,
     fontWeight: 'bold',
   },
