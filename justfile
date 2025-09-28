@@ -10,8 +10,8 @@ install:
 [group('setup')]
 pods:
     cd ios \
-    && pnpm bundle install \
-    && pnpm bundle exec pod install
+    && bundle install \
+    && bundle exec pod install
 
 # Run eslint and fix issues
 [group('check')]

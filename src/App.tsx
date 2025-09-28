@@ -8,7 +8,7 @@ import { StatusBar, useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import BootSplash from 'react-native-bootsplash';
 
-import LandingScreen from './src/screens/LandingScreen';
+import LandingScreen from '@src/screens/LandingScreen';
 
 const App: React.FC = (): React.ReactElement => {
   const isDarkMode = useColorScheme() === 'dark';
