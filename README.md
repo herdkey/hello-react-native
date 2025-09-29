@@ -2,6 +2,12 @@
 
 A React Native CLI project with TypeScript, comprehensive testing setup, and modern development tooling.
 
+<!--suppress HtmlDeprecatedAttribute -->
+<p align="center">
+    <!--suppress CheckImageSize -->
+    <img src="readme/screenshot.png" alt="screenshot" width="180">
+</p>
+
 ## Prerequisites
 
 - Node.js and pnpm - managed via `volta`
