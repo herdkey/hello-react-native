@@ -4,6 +4,7 @@ require('@testing-library/jest-dom');
 jest.mock('react-native', () => ({
   View: 'View',
   Text: 'Text',
+  Image: 'Image',
   StyleSheet: {
     create: styles => styles,
     flatten: style => style,

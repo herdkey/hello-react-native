@@ -7,7 +7,7 @@ const LandingScreen: React.FC = (): React.ReactElement => {
   return (
     <View style={styles.container}>
       <Text style={styles.text} testID="hello-text">
-        Hello, World!
+        Hello, Savi!
       </Text>
       <Image source={scamwiseImage} resizeMode="contain" style={styles.logo} />
     </View>

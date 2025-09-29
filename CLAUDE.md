@@ -33,7 +33,7 @@ Create a new React Native project called **`hello-mobile`** with the following r
 ## UI / Business Logic
 
 - Use **react-native-bootsplash** to show a splash screen while the app loads.
-- After splash, show a landing screen with centered text: **“Hello, World!”**
+- After splash, show a landing screen with centered text: **“Hello, Savi!”**
 
 ## Project Structure
 
@@ -63,6 +63,6 @@ hello-mobile/
 
 - Complete boilerplate code in TypeScript.
 - Scripts in `package.json` and `justfile` for: `lint`, `test`, `e2e`, `ios` (run on simulator), `pods` (CocoaPods install).
-- One example Jest test (checks that “Hello, World!” renders).
+- One example Jest test (checks that “Hello, Savi!” renders).
 - One example Detox test (verifies landing page text).
 - Document setup in `README.md`: how to install dependencies, run pods, start Metro, run on iOS simulator, run tests.
