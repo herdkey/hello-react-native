@@ -11,6 +11,7 @@ const config = {
   resolver: {
     alias: {
       '@src': path.resolve(__dirname, 'src'),
+      '@assets': path.resolve(__dirname, 'assets'),
     },
     platforms: ['ios', 'android', 'native', 'web'],
   },

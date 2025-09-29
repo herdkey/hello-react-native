@@ -7,6 +7,7 @@ export default {
         root: ['./src'],
         alias: {
           '@src': './src',
+          '@assets': './assets',
         },
       },
     ],
