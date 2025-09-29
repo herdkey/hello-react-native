@@ -1,3 +1,27 @@
+const iosApp = ({ isDebug }) => {
+  const config = isDebug ? 'Debug' : 'Release';
+  return {
+    [`ios.${config.toLowerCase()}`]: {
+      type: 'ios.app',
+      binaryPath: `ios/build/Build/Products/${config}-iphonesimulator/helloreactnative.app`,
+      build: `xcodebuild -workspace ios/helloreactnative.xcworkspace -scheme helloreactnative -configuration ${config} -sdk iphonesimulator -derivedDataPath ios/build`,
+    },
+  };
+};
+
+const androidApp = ({ isDebug }) => {
+  const config = isDebug ? 'Debug' : 'Release';
+  const configLower = config.toLowerCase();
+  return {
+    [`android.${config}`]: {
+      type: 'android.apk',
+      binaryPath: `android/app/build/outputs/apk/${configLower}/app-${configLower}.apk`,
+      build: `cd android && ./gradlew assemble${config} assembleAndroidTest -DtestBuildType=${configLower}`,
+      ...(isDebug ? { reversePorts: [8081] } : {}),
+    },
+  };
+};
+
 /** @type {Detox.DetoxConfig} */
 module.exports = {
   testRunner: {
@@ -9,34 +33,19 @@ module.exports = {
       setupTimeout: 120000,
     },
   },
+  artifacts: {
+    plugins: {
+      log: 'failing',
+      screenshot: 'failing',
+      video: 'none',
+      uiHierarchy: 'none',
+    },
+  },
   apps: {
-    'ios.debug': {
-      type: 'ios.app',
-      binaryPath:
-        'ios/build/Build/Products/Debug-iphonesimulator/helloreactnative.app',
-      build:
-        'xcodebuild -workspace ios/helloreactnative.xcworkspace -scheme helloreactnative -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build',
-    },
-    'ios.release': {
-      type: 'ios.app',
-      binaryPath:
-        'ios/build/Build/Products/Release-iphonesimulator/helloreactnative.app',
-      build:
-        'xcodebuild -workspace ios/helloreactnative.xcworkspace -scheme helloreactnative -configuration Release -sdk iphonesimulator -derivedDataPath ios/build',
-    },
-    'android.debug': {
-      type: 'android.apk',
-      binaryPath: 'android/app/build/outputs/apk/debug/app-debug.apk',
-      build:
-        'cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug',
-      reversePorts: [8081],
-    },
-    'android.release': {
-      type: 'android.apk',
-      binaryPath: 'android/app/build/outputs/apk/release/app-release.apk',
-      build:
-        'cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release',
-    },
+    ...iosApp({ isDebug: true }),
+    ...iosApp({ isDebug: false }),
+    ...androidApp({ isDebug: false }),
+    ...androidApp({ isDebug: true }),
   },
   devices: {
     simulator: {

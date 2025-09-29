@@ -48,6 +48,7 @@ yarn-error.log
 
 # testing
 /coverage
+/artifacts/
 
 # Yarn
 .yarn/*
