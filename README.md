@@ -32,6 +32,17 @@ just install
 just pods
 ```
 
+Open this repo's `ios/` folder in Xcode, and download/"Get" an iOS simulator. Run these commands to choose a device/runtime pair: `xcrun simctl list devicetypes` and `xcrun simctl list runtimes`. Then run something like:
+
+```bash
+name="Detox iPhone 17"
+device="com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro"
+runtime="com.apple.CoreSimulator.SimRuntime.iOS-26-0"
+xcrun simctl create "$name" "$device" "$runtime"
+```
+
+`DBEC9754-AA52-4038-881C-EFADD0F5A10E`
+
 ### 2. Start Metro Bundler
 
 ```bash
