@@ -7,7 +7,7 @@ ruby ">= 3.4.6"
 gem 'cocoapods', '>= 1.13', '!= 1.15.0', '!= 1.15.1'
 gem 'activesupport', '>= 8.0.3', '>= 8.0.3'
 gem 'xcodeproj', '< 1.26.0'
-gem 'concurrent-ruby', '< 1.3.4'
+gem 'concurrent-ruby', '< 1.3.6'
 
 # Ruby 3.4.0 has removed some libraries from the standard library.
 gem 'bigdecimal'
